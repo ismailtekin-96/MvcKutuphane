@@ -1,0 +1,38 @@
+﻿@model MvcKutuphane.Models.Entity.TBLKitap
+@{
+    ViewBag.Title = "KtpEkleIndex";
+    Layout = "~/Views/Shared/View.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div></div>
+    <div style="margin-top:15px">
+        <label>Kitap Adı</label>
+        @Html.TextBoxFor(k => k.Ad, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Kitap Kategori</label>
+        @Html.DropDownListFor(k => k.TBLKategory.Id,(List<SelectListItem>)ViewBag.dgr1, 
+       new {@class= "form-control"})
+
+    </div>
+    <div style="margin-top:15px">
+        <label>Kitap Yazar</label>
+        @Html.DropDownListFor(k => k.TBLYazarlar.Id, (List<SelectListItem>)ViewBag.dgr2, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Basım Yılı</label>
+        @Html.TextBoxFor(k => k.Basimyill, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Yayınevi</label>
+        @Html.TextBoxFor(k => k.Yayınevi, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Sayfa Sayısı</label>
+        @Html.TextBoxFor(k => k.Sayfa, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn-block btn-info" id=" Btn1"> Kitap Ekle </button>
+    </div>
+</form>

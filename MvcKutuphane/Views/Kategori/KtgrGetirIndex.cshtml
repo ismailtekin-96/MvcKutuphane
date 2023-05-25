@@ -1,0 +1,22 @@
+﻿@model MvcKutuphane.Models.Entity.TBLKategory
+@{
+    ViewBag.Title = "KtgrGuncelleIndex";
+    Layout = "~/Views/Shared/View.cshtml";
+}
+
+@using (Html.BeginForm("KategoriGuncelle", "Kategori", FormMethod.Post))
+{
+    <div style="margin-bottom:15px"></div>
+    <div class=" form-group">
+        @Html.LabelFor(k=>k.Id)
+        @Html.TextBoxFor(k=>k.Id , new { @class = "form-control"})
+        <br />
+        @*@Html.LabelFor(k=>k.Ad)*@
+    <label>Kategori Adı</label>
+        @Html.TextBoxFor(k=>k.Ad, new { @class = "form-control"})
+
+    </div>
+    <div>
+        <button class="btn btn-warning">Güncelle</button>
+    </div>
+}

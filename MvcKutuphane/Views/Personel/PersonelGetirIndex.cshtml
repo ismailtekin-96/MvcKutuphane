@@ -1,0 +1,23 @@
+﻿@model MvcKutuphane.Models.Entity.TBLPersonel
+@{
+    ViewBag.Title = "PersonelGetirIndex";
+    Layout = "~/Views/Shared/View.cshtml";
+}
+
+@using (Html.BeginForm("PersonelGuncelle", "Personel", FormMethod.Post))
+{
+    <div style="margin-bottom:15px"></div>
+    <div class=" form-group">
+        @Html.LabelFor(k => k.Id)
+        @Html.TextBoxFor(k => k.Id, new { @class = "form-control" })
+        <br />
+        @*@Html.LabelFor(k=>k.Ad)*@
+        <label>Personel Adı</label>
+        @Html.TextBoxFor(k => k.Personel, new { @class = "form-control" })
+
+    </div>
+    <div>
+        <button class="btn btn-warning">Güncelle</button>
+    </div>
+}
+
